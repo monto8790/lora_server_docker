@@ -3,11 +3,9 @@
 
 [postgresql]
 dsn="postgres://loraserver_as:keti@localhost/loraserver_as?sslmode=disable"
-#dsn="postgres://loraserver_as:keti@localhost/loraserver_as?sslmode=disable"
-#dsn="postgres://chirpstack_as:chirpstack_as@localhost/chirpstack_as?sslmode=disable"
 
 [redis]
-url="redis://l27.0.0.1:6379"
+url="redis://localhost:6379"
 
 [application_server.integration.mqtt]
 server="tcp://127.0.0.1:1883"
