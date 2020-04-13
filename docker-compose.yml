@@ -1,6 +1,15 @@
 version: "3"
 
 services:
+  rpi_ttn_gateway:
+    image: monto8790/rpi-ttn-gateway:v3
+    network_mode: host
+    privileged: true
+    volumes:
+      - ./configuration/rpi_ttn_gateway/local_conf.json:/opt/ttn-gateway/bin/local_conf.json
+      - ./configuration/rpi_ttn_gateway/global_conf.json:/opt/ttn-gateway/bin/global_conf.json
+    command: ./start.sh
+
   chirpstack-network-server:
     image: ceticasbl/chirpstack-network-server:v3.4.1
 
@@ -9,6 +18,7 @@ services:
       - mosquitto
       - postgresql
       - redis
+      - rpi_ttn_gateway
     volumes:
       - ./configuration/chirpstack-network-server:/etc/chirpstack-network-server
 
@@ -19,6 +29,7 @@ services:
       - mosquitto
       - postgresql
       - redis
+      - rpi_ttn_gateway
     ports:
       - 8080:8080
     volumes:
@@ -35,6 +46,7 @@ services:
       - mosquitto
       - postgresql
       - redis
+      - rpi_ttn_gateway
     network_mode: host
 
 #  chirpstack-geolocation-server:
