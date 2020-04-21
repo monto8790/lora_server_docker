@@ -16,5 +16,5 @@ public_host="127.0.0.1:8001"
 
 [application_server.external_api]
 bind="0.0.0.0:8080"
-jwt_secret="u+VU3s0i371i9tJcM9GAVAA1oUkyb3e8ouHx5+fpV7k="
+jwt_secret="L5r1NwhnA6t9ewR9te58F8dFe2PxSQWytNtQw5zWzik="
 #jwt_secret=""

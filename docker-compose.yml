@@ -2,7 +2,7 @@ version: "3"
 
 services:
   rpi_ttn_gateway:
-    image: monto8790/rpi-ttn-gateway:v3
+    image: monto8790/rpi-ttn-gateway:latest
     network_mode: host
     privileged: true
     volumes:
@@ -12,7 +12,6 @@ services:
 
   chirpstack-network-server:
     image: ceticasbl/chirpstack-network-server:v3.4.1
-
     network_mode: host
     depends_on:
       - mosquitto
